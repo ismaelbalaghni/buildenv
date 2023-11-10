@@ -1,0 +1,28 @@
+refs:
+    - pip://nmk-github!plugin.yml
+    - pip://nmk-badges!plugin.yml
+    - pip://nmk-python!plugin.yml
+    - pip://nmk-vscode!plugin.yml
+    - pip://nmk-doc!plugin.yml
+    - <workspace>/shared.yml
+    - workspace:
+        local: ../../shared
+        remote: github://dynod/workspace/main/shared
+
+config:
+    # Extra setup data
+    pythonSetupItems:
+        metadata:
+            description: Build environment setup system, based on Python venv
+        options.package_data:
+            buildenv.templates:
+                - "*.jinja"
+
+    # Dependencies
+    pythonPackageRequirements:
+        - Jinja2
+
+    # Extra known words for spell check
+    vscodeSettingsItems:
+        cSpell.words:
+            - buildenv
