@@ -25,6 +25,9 @@ config:
         - Jinja2
         - argcomplete
 
+    githubOSImages:
+        - macos-latest
+
     # Customize CSS for wider page
     docExtraConfig:
         html_static_path:
