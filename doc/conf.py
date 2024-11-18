@@ -6,7 +6,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
 # Project information
-project = "buildenv"
+project = "buildenv-mac"
 copyright = "2024, The dynod project"
 author = "The dynod project"
 
