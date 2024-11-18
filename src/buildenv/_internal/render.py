@@ -4,7 +4,7 @@ from pathlib import Path
 
 from jinja2 import Template
 
-from buildenv.loader import NEWLINE_PER_TYPE, BuildEnvLoader, logger, to_linux_path, to_windows_path
+from buildenv.loader import NEWLINE_PER_TYPE, BuildEnvLoader, logger, to_unix_path, to_windows_path
 
 # Path to bundled template files
 _TEMPLATES_FOLDER = Path(__file__).parent.parent / "templates"
@@ -13,7 +13,7 @@ _TEMPLATES_FOLDER = Path(__file__).parent.parent / "templates"
 _COMMENT_PER_TYPE = {".py": "# ", ".sh": "# ", ".cmd": ":: "}
 
 # Map of file header per file extension
-_HEADERS_PER_TYPE = {".py": "", ".sh": "#!/usr/bin/bash\n", ".cmd": "@ECHO OFF\n"}
+_HEADERS_PER_TYPE = {".py": "", ".sh": "#!/usr/bin/env bash\n", ".cmd": "@ECHO OFF\n"}
 
 # Return codes
 RC_START_SHELL = 100  # RC used to tell loading script to spawn an interactive shell
@@ -50,7 +50,7 @@ class TemplatesRenderer:
             "cmdWindowsPython": windows_python.replace("${", "%").replace("}", "%"),
             "linuxPython": self.loader.read_config("linuxPython", "python3"),
             "cmdVenvBinPath": to_windows_path(self.relative_venv_bin_path),
-            "shVenvBinPath": to_linux_path(self.relative_venv_bin_path),
+            "shVenvBinPath": to_unix_path(self.relative_venv_bin_path),
             "rcStartShell": RC_START_SHELL,
             "buildenvPrompt": self.loader.prompt,
             "venvName": self.relative_venv_bin_path.parent.name,

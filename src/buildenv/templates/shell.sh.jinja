@@ -1,6 +1,8 @@
 # Load user profile (if any)
 if test -e ~/.bashrc; then
     source ~/.bashrc
+else test -e ~/.zshrc; then
+    source ~/.zshrc
 fi
 
 # Activate venv

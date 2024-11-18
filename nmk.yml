@@ -25,6 +25,7 @@ config:
         - Jinja2
         - argcomplete
 
+    # Add macOS to GitHub workflow
     githubOSImages:
         - macos-latest
 

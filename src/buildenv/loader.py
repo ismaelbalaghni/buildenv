@@ -47,6 +47,15 @@ def to_linux_path(path: Path) -> str:
     return f"/{path.drive[0].lower()}/{path.as_posix()[3:]}" if len(path.drive) else path.as_posix()
 
 
+def to_unix_path(path: Path) -> str:
+    """Turn provided path to a UNIX-style path (Linux, macOS)
+
+    :param path: Path to be converted
+    :return: Converted path, UNIX style
+    """
+    return path.as_posix()
+
+
 def to_windows_path(path: Path) -> str:
     """
     Turn provided path to a Windows style path.
@@ -101,7 +110,7 @@ class _MyEnvBuilder(EnvBuilder):
 
         # Prepare activation loop, per supported script extension
         activation_loop = {
-            ".sh": f"for i in {to_linux_path(d)}/*.sh; do source $i; done",
+            ".sh": f"for i in {to_unix_path(d)}/*.sh; do source $i; done",
             ".bat": f"@echo off\nfor /f %%i in ('dir /b /o:n {to_windows_path(d)}\\*.bat') do (\n    call {to_windows_path(d)}\\%%i\n)",
         }
 
