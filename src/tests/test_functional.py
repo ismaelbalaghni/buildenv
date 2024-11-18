@@ -83,10 +83,7 @@ class TestFunctional(BuildEnvTestHelper):
         self.check_generated_buildenv(buildenv)
 
         # Check for return code propagation
-        if is_windows():
-            args = ["cmd", "/c", f"{buildenv / 'buildenv.cmd'} run exit /b 74"]
-        else:
-            args = [f"{buildenv / 'buildenv.sh'}", "run", "exit", "74"]
+        args = ["cmd", "/c", f"{buildenv / 'buildenv.cmd'} run exit /b 74"] if is_windows() else [f"{buildenv / 'buildenv.sh'}", "run", "exit", "74"]
         cp = subprocess.run(args, cwd=buildenv, check=False, capture_output=True, env=new_env)
         assert cp.returncode == 74
 
@@ -100,10 +97,7 @@ class TestFunctional(BuildEnvTestHelper):
         assert cp.returncode == 0
 
         # Try again: shall fail because of bad python path
-        if is_windows():
-            args = ["cmd", "/c", f"{buildenv / 'buildenv.cmd'} init"]
-        else:
-            args = [f"{buildenv / 'buildenv.sh'}", "init"]
+        args = ["cmd", "/c", f"{buildenv / 'buildenv.cmd'} init"] if is_windows() else [f"{buildenv / 'buildenv.sh'}", "init"]
         cp = subprocess.run(args, cwd=buildenv, check=False, capture_output=True, env=new_env)
         logging.info("buildenv init stdout:\n" + "\n".join(cp.stdout.decode().splitlines()))
         logging.info("buildenv init stderr:\n" + "\n".join(cp.stderr.decode().splitlines()))

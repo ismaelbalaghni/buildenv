@@ -1,7 +1,6 @@
 import re
 import subprocess
 from pathlib import Path
-from typing import List
 
 import pytest
 from nmk.utils import is_windows
@@ -119,7 +118,7 @@ class TestBuildEnvLoader(BuildEnvTestHelper):
         v = loader.find_venv()
         assert v == fake_venv
 
-    def check_strings(self, received_list: List[str], expected_list: List[str]):
+    def check_strings(self, received_list: list[str], expected_list: list[str]):
         # Check used commands
         for received, expected in zip(
             received_list if isinstance(received_list, list) else [received_list],
@@ -141,7 +140,7 @@ class TestBuildEnvLoader(BuildEnvTestHelper):
             received_commands.append(" ".join(args))
             if args[0] == "git":
                 return subprocess.CompletedProcess(args, 1, str(cwd).encode())
-            return subprocess.CompletedProcess(args, 0, "".encode())
+            return subprocess.CompletedProcess(args, 0, b"")
 
         # Patch subprocess:
         # - to fake git answer --> returns rc 1
