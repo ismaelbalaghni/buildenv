@@ -2,15 +2,15 @@
 Build environment setup system, based on Python venv
 
 <!-- NMK-BADGES-BEGIN -->
-[![License: MPL](https://img.shields.io/github/license/ismaelbalaghni/buildenv-mac?color=green)](https://github.com/ismaelbalaghni/buildenv-mac/blob/main/LICENSE)
-[![Checks](https://img.shields.io/github/actions/workflow/status/ismaelbalaghni/buildenv-mac/build.yml?branch=main&label=build%20%26%20u.t.)](https://github.com/ismaelbalaghni/buildenv-mac/actions?query=branch%3Amain)
-[![Issues](https://img.shields.io/github/issues-search/ismaelbalaghni/buildenv-mac?label=issues&query=is%3Aopen+is%3Aissue)](https://github.com/ismaelbalaghni/buildenv-mac/issues?q=is%3Aopen+is%3Aissue)
+[![License: MPL](https://img.shields.io/github/license/ismaelbalaghni/buildenv?color=green)](https://github.com/ismaelbalaghni/buildenv/blob/main/LICENSE)
+[![Checks](https://img.shields.io/github/actions/workflow/status/ismaelbalaghni/buildenv/build.yml?branch=main&label=build%20%26%20u.t.)](https://github.com/ismaelbalaghni/buildenv/actions?query=branch%3Amain)
+[![Issues](https://img.shields.io/github/issues-search/ismaelbalaghni/buildenv?label=issues&query=is%3Aopen+is%3Aissue)](https://github.com/ismaelbalaghni/buildenv/issues?q=is%3Aopen+is%3Aissue)
 [![Supported python versions](https://img.shields.io/badge/python-3.9%20--%203.12-blue)](https://www.python.org/)
-[![PyPI](https://img.shields.io/pypi/v/buildenv-mac)](https://pypi.org/project/buildenv-mac/)
+[![PyPI](https://img.shields.io/pypi/v/buildenv)](https://pypi.org/project/buildenv/)
 [![Code style: ruff](https://img.shields.io/badge/code%20style-ruff-000000.svg)](https://astral.sh/ruff)
 [![Ruff analysis result](https://img.shields.io/badge/ruff-0-green)](https://astral.sh/ruff)
-[![Code coverage](https://img.shields.io/codecov/c/github/ismaelbalaghni/buildenv-mac)](https://app.codecov.io/gh/ismaelbalaghni/buildenv-mac)
-[![Documentation Status](https://readthedocs.org/projects/buildenv-mac/badge/?version=stable)](https://buildenv-mac.readthedocs.io/)
+[![Code coverage](https://img.shields.io/codecov/c/github/ismaelbalaghni/buildenv)](https://app.codecov.io/gh/ismaelbalaghni/buildenv)
+[![Documentation Status](https://readthedocs.org/projects/buildenv/badge/?version=stable)](https://buildenv.readthedocs.io/)
 <!-- NMK-BADGES-END -->
 
 ## Features
